@@ -1,0 +1,98 @@
+/* ====================================
+   All region in project
+   ==================================== */
+
+
+/* zone global style */
+
+.zone {
+    margin-bottom: 20px;
+    &__title {
+        @include font-size(20, 28);
+        font-weight: bold;
+        position: relative;
+        margin-bottom: 10px;
+        padding-top: 13px;
+        &::after {
+            display: block;
+            width: 80px;
+            height: 8px;
+            content: '';
+            background: $brand-primary;
+            background: linear-gradient(to right, $brand-danger, $brand-primary);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+    &__content {
+        @include clearfix();
+    }
+    .area--grey & {
+        .zone__title {
+            padding: 0;
+            &::after {
+                left: 0;
+            }
+        }
+    }
+    .area--special & {
+        .zone__title {
+            a {
+                color: white;
+            }
+        }
+    }
+    &--poetic {
+        background: url(../img/poetics-bg.png) right bottom no-repeat #fef2e9;
+        padding: 0 15px 15px;
+        max-height: 350px;
+        overflow: hidden;
+    }
+    &--grey {
+        background: #f0f0f0;
+        padding: 0 10px 10px;
+        .zone__title {
+            padding: 9px 0 7px;
+            @include font-size(18, 25);
+            border-bottom: 1px solid #ddd;
+            &::after {
+                height: 4px;
+                background: $brand-warning;
+            }
+            a:hover {
+                color: $brand-warning;
+            }
+        }
+    }
+    &--special {
+        margin-left: -10px;
+        margin-right: -10px;
+        background: #f0f0f0;
+        background-image: linear-gradient(to top, #d2d2d2 0, #dcdddf 52%, #ebebeb 100%);
+        padding: 0 10px 10px;
+        .two-cols {
+            > .story {
+                margin-bottom: 0;
+            }
+        }
+    }
+    &--small {
+        .zone__title {
+            padding: 9px 0 0px;
+            @include font-size(18, 25);
+            &::after {
+                height: 4px;
+            }
+        }
+    }
+}
+
+
+/* ads */
+
+.qc {
+    @include clearfix();
+    margin-bottom: 20px;
+    text-align: center;
+}
